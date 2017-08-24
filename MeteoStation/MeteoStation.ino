@@ -4,6 +4,8 @@
  Author:	aless
 */
 
+#include <Adafruit_BMP085.h>
+#include <AC_DS3231.h>
 #include <LiquidCrystal_I2C.h>
 
 #pragma region dichiarazioni
@@ -19,8 +21,20 @@ float Local_Altitude = 70.0;				//Insert here altitude of your location in meter
 
 unsigned long interval = 23000;				//Don't change
 
+// ------- LCD --------
 LiquidCrystal_I2C dlc(0x27, 20, 4);
 byte lcd_L4_info = 1;
+// --------------------
+
+#define Receiver_PIN 8
+#define Led1_PIN 2							//led di ricezione segnale radio (da confermare)
+
+AC_DS3231 RTC;								//Orologio
+
+// ------ BMP085 -------					il nostro è BMP180 ma la libreria va bene uguale
+#define BMP085_ADDRESS 0x77					// I2C address of BMP085
+Adafruit_BMP085 bmp;
+// ---------------------
 
 #pragma endregion
 
