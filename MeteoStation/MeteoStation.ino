@@ -22,7 +22,7 @@ float Local_Altitude = 70.0;				//Insert here altitude of your location in meter
 unsigned long interval = 23000;				//Don't change
 
 // ------- LCD --------
-LiquidCrystal_I2C dlc(0x27, 20, 4);
+LiquidCrystal_I2C lcd(0x27, 20, 4);
 byte lcd_L4_info = 1;
 // --------------------
 
@@ -31,18 +31,80 @@ byte lcd_L4_info = 1;
 
 AC_DS3231 RTC;								//Orologio
 
+//per l'rtc indirizzi 0x57 e 0x68
+
 // ------ BMP085 -------					il nostro è BMP180 ma la libreria va bene uguale
 #define BMP085_ADDRESS 0x77					// I2C address of BMP085
 Adafruit_BMP085 bmp;
 // ---------------------
 
+#define nobits 36
+#define smin 7500
+#define smax 9900
+#define semin 250
+#define semax 750
+#define lmin 1700
+#define lmax 2300
+#define hmin 3700
+#define hmax 4300
+
+float TemperatureInt, TempIntBMP;
+float pressure;
+float rain, rain2, rainf;
+float Rain_DayBegin;
+float averagew, gust;
+float lastgust = 16;
+float HumidadeExt, HumidadeInt;
+float IndiceUV, temperature4;
+
+short int temperature;
+short int TemperaturaExt;
+short int humidity, humidity2;
+int windd;
+unsigned int ADC0, ADC1, ADC4, SolarRad;	//ADC sta per convertitore analogico digitale
+unsigned long ReadMillis;
+unsigned long time, elapsed, lastreadtime, time1, elapsed1, lastreadtime1;
+unsigned long time2, elapsed2, lastreadtime2;
+long sensor[6];
+
+byte TransmitterID;
+byte WSDL_DataType;						//questo non serve
+
+// ---- Direzioni Banderuola -------
+static char windDirectionsText[8][3] = { "N", "NE", "E", "SE", "S", "SW", "W", "NW" };
+
+char DataPacket[27];
+char capture_date[11];
+char capture_time[11];
+String winddr, code;
+boolean validPacket;
+
+// make some custom characters (crea i caratteri dei cuori ()):
+byte heart[8] = {
+	0b00000,
+	0b01010,
+	0b11111,
+	0b11111,
+	0b11111,
+	0b01110,
+	0b00100,
+	0b00000
+};
+
 #pragma endregion
-
-
 
 // the setup function runs once when you press reset or power the board
 void setup() {
 
+	Serial.begin(9600);
+
+	pinMode(Receiver_PIN, INPUT);
+	digitalWrite(Receiver_PIN, HIGH);
+
+	pinMode(Led1_PIN, OUTPUT);
+
+	pinMode(13, OUTPUT);
+	digitalWrite(13, LOW);
 }
 
 // the loop function runs over and over again until power down or reset
