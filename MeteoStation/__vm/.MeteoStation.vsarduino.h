@@ -77,5 +77,7 @@ typedef void *__builtin_va_list;
 #define pgm_read_ptr(address_short)   short()
 
 #include "MeteoStation.ino"
+#include "RCode.ino"
+#include "init_LCD.ino"
 #endif
 #endif

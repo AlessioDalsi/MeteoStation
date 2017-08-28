@@ -4,8 +4,9 @@
  Author:	aless
 */
 
-#include <Adafruit_BMP085.h>
 #include <AC_DS3231.h>
+#include <EEPROM.h>
+#include <Adafruit_BMP085.h>
 #include <LiquidCrystal_I2C.h>
 
 #pragma region dichiarazioni
@@ -97,6 +98,10 @@ byte heart[8] = {
 void setup() {
 
 	Serial.begin(9600);
+	Wire.begin();
+	bmp.begin(2);
+	RTC.begin();
+
 
 	pinMode(Receiver_PIN, INPUT);
 	digitalWrite(Receiver_PIN, HIGH);
@@ -105,9 +110,14 @@ void setup() {
 
 	pinMode(13, OUTPUT);
 	digitalWrite(13, LOW);
+
+	init_LCD();
+	//Rain_DayBegin = eepromReadFloat(30);
+
 }
 
 // the loop function runs over and over again until power down or reset
 void loop() {
 
+	code = RCode();
 }

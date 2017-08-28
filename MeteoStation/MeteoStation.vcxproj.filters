@@ -16,6 +16,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="MeteoStation.ino" />
+    <None Include="init_LCD.ino" />
+    <None Include="RCode.ino" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="__vm\.MeteoStation.vsarduino.h">
