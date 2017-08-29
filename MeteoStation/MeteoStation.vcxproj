@@ -77,13 +77,34 @@
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="checkPakcet.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="Data_Output.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="EEPROM.ino">
+      <FileType>CppCode</FileType>
+    </None>
     <None Include="init_LCD.ino">
       <FileType>CppCode</FileType>
     </None>
     <None Include="MeteoStation.ino">
       <FileType>CppCode</FileType>
     </None>
+    <None Include="Rain_Updates.ino">
+      <FileType>CppCode</FileType>
+    </None>
     <None Include="RCode.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="read_BMP.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="Sensor_Decode.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="write_LCD.ino">
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>

@@ -29,6 +29,7 @@ byte lcd_L4_info = 1;
 
 #define Receiver_PIN 8
 #define Led1_PIN 2							//led di ricezione segnale radio (da confermare)
+#define Led2_PIN 3
 
 AC_DS3231 RTC;								//Orologio
 
@@ -49,7 +50,7 @@ Adafruit_BMP085 bmp;
 #define hmin 3700
 #define hmax 4300
 
-float TemperatureInt, TempIntBMP;
+float TemperaturaInt, TempIntBMP;
 float pressure;
 float rain, rain2, rainf;
 float Rain_DayBegin;
@@ -119,5 +120,8 @@ void setup() {
 // the loop function runs over and over again until power down or reset
 void loop() {
 
-	code = RCode();
+	code = RCode();						//funzione che riceve originali dai sensori
+	Serial.print(code);
+
+	Sensor_Decode();
 }

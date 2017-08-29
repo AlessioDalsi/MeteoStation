@@ -18,6 +18,13 @@
     <None Include="MeteoStation.ino" />
     <None Include="init_LCD.ino" />
     <None Include="RCode.ino" />
+    <None Include="Rain_Updates.ino" />
+    <None Include="EEPROM.ino" />
+    <None Include="Sensor_Decode.ino" />
+    <None Include="checkPakcet.ino" />
+    <None Include="read_BMP.ino" />
+    <None Include="Data_Output.ino" />
+    <None Include="write_LCD.ino" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="__vm\.MeteoStation.vsarduino.h">

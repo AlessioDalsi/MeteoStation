@@ -77,7 +77,14 @@ typedef void *__builtin_va_list;
 #define pgm_read_ptr(address_short)   short()
 
 #include "MeteoStation.ino"
+#include "Data_Output.ino"
+#include "EEPROM.ino"
 #include "RCode.ino"
+#include "Rain_Updates.ino"
+#include "Sensor_Decode.ino"
+#include "checkPakcet.ino"
 #include "init_LCD.ino"
+#include "read_BMP.ino"
+#include "write_LCD.ino"
 #endif
 #endif
