@@ -17,8 +17,8 @@
 
 boolean Solar_UV = false;
 float TemperaturaInt_offset = 0.0;			//Interior Temperature Fine Adjust
-float pressure_offset = -4.0;				//Pressure Fine Adjust
-float Local_Altitude = 70.0;				//Insert here altitude of your location in meters
+float pressure_offset = -0.9;				//Pressure Fine Adjust
+float Local_Altitude = 84.0;				//Insert here altitude of your location in meters
 
 unsigned long interval = 23000;				//Don't change
 

@@ -5,19 +5,6 @@ void write_LCD() {
 
 	lcd.setCursor(0, 1);
 	lcd.print(F("                    "));
-	lcd.setCursor(0, 1);
-	lcd.print(F(" In:"));
-	if (TemperaturaInt >= 10) lcd.setCursor(5, 1);
-	else lcd.setCursor(6, 1);
-	lcd.print(TemperaturaInt, 1);
-	lcd.write(B11011111);   // Degree Symbol
-	lcd.print(F("C"));
-	lcd.setCursor(14, 1);
-	lcd.print(HumidadeInt, 0);
-	lcd.print(F("% H"));
-
-	lcd.setCursor(0, 2);
-	lcd.print(F("                    "));
 	lcd.setCursor(0, 2);
 	lcd.print(F("Out:"));
 	if (temperature4 >= 100) lcd.setCursor(5, 2);
