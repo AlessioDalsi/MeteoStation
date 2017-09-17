@@ -1,6 +1,10 @@
 void write_LCD() {
 
-	HumidadeExt = ((humidity*10.0) + humidity2)*10.0;
+
+	lcd.clear();
+	lcd.print(temperature4 / 10, 1);
+
+	/*HumidadeExt = ((humidity*10.0) + humidity2)*10.0;
 	char lcd_hours[20];
 
 	lcd.setCursor(0, 1);
@@ -77,4 +81,5 @@ void write_LCD() {
 
 	if (lcd_L4_info <= 4) lcd_L4_info += 1;
 	else lcd_L4_info = 1;
+	*/
 }
