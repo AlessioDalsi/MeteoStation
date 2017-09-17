@@ -15,5 +15,9 @@ void init_LCD() {
 	lcd.print("(Alpha)");
 	delay(5000);
 	lcd.clear();
+	lcd.setCursor(0, 0);
+	lcd.print("Attesa dei primi");
+	lcd.setCursor(0,1);
+	lcd.print("dati");
 
 }
