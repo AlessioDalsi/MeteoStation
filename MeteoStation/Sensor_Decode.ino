@@ -10,25 +10,12 @@ void Sensor_Decode() {
 				for (int i = 0; i < 12; i++)
 					if (code.charAt(i + 12) == '1') temperature += 1 << i;
 
-				Serial.print("\n");
-				Serial.print("Temperature A: ");
-				Serial.print(temperature);
-				Serial.print("\n");
-
 				// Calculate negative temperature
 				if ((temperature & 0x800) == 0x800)
 				{
 					temperature = temperature | 0xF000;
 				}
-				Serial.print("Temperature B: ");
-				Serial.print(temperature);
-				Serial.print("\n");
-				if (temperature == 3595) {
-					temperature4 = temperature4;
-				}
-				else {
-					temperature4 = temperature;
-				}
+				temperature4 = temperature;
 
 				humidity = 0;
 				humidity2 = 0;

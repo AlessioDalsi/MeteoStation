@@ -50,6 +50,7 @@ Adafruit_BMP085 bmp;
 #define hmin 3700
 #define hmax 4300
 
+float tempOld;
 float TemperaturaInt, TempIntBMP;
 float pressure;
 float rain, rain2, rainf;
