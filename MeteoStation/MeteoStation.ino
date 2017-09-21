@@ -57,7 +57,7 @@ float rain, rain2, rainf;
 float Rain_DayBegin;
 float averagew, gust;
 float lastgust = 16;
-float HumidadeExt, HumidadeInt;
+float HumidadeExt, HumidadeExtOld, HumidadeInt;
 float IndiceUV, temperature4;
 
 short int temperature;

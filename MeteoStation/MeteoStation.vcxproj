@@ -120,7 +120,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties VM.DebugVariablesWindow.ColumnVisibleVariableValueBinary="1" arduino.upload.port="COM5" />
+      <UserProperties VM.DebugVariablesWindow.ColumnVisibleVariableValueBinary="1" arduino.upload.port="COM4" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

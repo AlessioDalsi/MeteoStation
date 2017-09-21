@@ -24,6 +24,13 @@ void Sensor_Decode() {
 					if (code.charAt(i + 28) == '1') humidity += 1 << i;
 					if (code.charAt(i + 24) == '1') humidity2 += 1 << i;
 				}
+				Serial.print("\n");
+				Serial.print("Humidity1: ");
+				Serial.print(humidity);
+				Serial.print("\n");
+				Serial.print("Humidity2: ");
+				Serial.print(humidity2);
+				Serial.print("\n");
 			}
 
 			//read_BMP();

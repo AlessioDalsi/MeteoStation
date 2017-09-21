@@ -1,6 +1,17 @@
 void write_LCD() {
 
+	HumidadeExtOld = HumidadeExt;
+	if (humidity != 2 && humidity != 0) {																//provare a usare la temperatura nell'if invece dell'umidità
+		HumidadeExt = ((humidity*10.0) + humidity2)*10.0;
+	}
+	else {
+		HumidadeExtOld = HumidadeExt;
+	}
+	char lcd_hours[20];
+
 	lcd.clear();
+	lcd.setCursor(0, 0);
+	lcd.print("Temperatura: ");
 	if (temperature4 != -501) {
 		lcd.print(temperature4 / 10, 1);
 		tempOld = temperature4;
@@ -8,6 +19,18 @@ void write_LCD() {
 	else {
 		lcd.print(tempOld / 10, 1);
 	}
+	lcd.write(B11011111);
+	lcd.print("C");
+	lcd.setCursor(0, 1);
+	lcd.print("Umidita': ");
+	lcd.setCursor(13, 1);
+	if (humidity != 2 && humidity != 0) {
+		lcd.print(HumidadeExt / 10, 0);
+	}
+	else {
+		lcd.print(HumidadeExtOld / 10, 0);
+	}
+	lcd.print("%");
 
 	/*HumidadeExt = ((humidity*10.0) + humidity2)*10.0;
 	char lcd_hours[20];
