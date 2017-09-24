@@ -1,7 +1,7 @@
 void write_LCD() {
 
 	HumidadeExtOld = HumidadeExt;
-	if (humidity != 2 && humidity != 0) {																//provare a usare la temperatura nell'if invece dell'umidità
+	if (temperature4 != -501) {																//provare a usare la temperatura nell'if invece dell'umidità
 		HumidadeExt = ((humidity*10.0) + humidity2)*10.0;
 	}
 	else {
@@ -24,7 +24,7 @@ void write_LCD() {
 	lcd.setCursor(0, 1);
 	lcd.print("Umidita': ");
 	lcd.setCursor(13, 1);
-	if (humidity != 2 && humidity != 0) {
+	if (temperature4 != -501) {
 		lcd.print(HumidadeExt / 10, 0);
 	}
 	else {
